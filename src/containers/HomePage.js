@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import PostsContainer from './PostsContainer';
+import FriendsContainer from './FriendsContainer'
 import { connect } from 'react-redux' 
 import { fetchUsers } from '../actions/userActions'
 
-class UserContainer extends Component {
+class HomePage extends Component {
 
    
     componentDidMount() {
@@ -13,8 +15,9 @@ class UserContainer extends Component {
     render() {
         return (
             <div>
-                {this.props.loading}
                 {this.props.users.map(user => <li key={user.id}>{user.name}</li>)}
+                <PostsContainer />
+                <FriendsContainer />
             </div>
         )
     }
@@ -36,4 +39,4 @@ const mapDispatchToProps = (dispatch) => ({
     fetchUsers: () => dispatch(fetchUsers())
 })
 
-export default connect(mapStateToProps ,mapDispatchToProps)(UserContainer);
+export default connect(mapStateToProps ,mapDispatchToProps)(HomePage);

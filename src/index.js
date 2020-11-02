@@ -8,7 +8,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware , compose} from 'redux';
 import { combineReducers } from "redux";
-import UserContainer from './containers/UserContainer';
+import HomePage from './containers/HomePage';
 
 
 const rootReducer = combineReducers({
@@ -24,7 +24,6 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Route exact path="/users" component={UserContainer} />
       <App />
     </Router>
   </Provider>
