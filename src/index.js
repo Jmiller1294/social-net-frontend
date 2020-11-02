@@ -7,6 +7,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && 
+  window.__REDUX_DEVTOOLS_EXTENSION__(), 
+  applyMiddleware(thunk)
+)
+
+
 ReactDOM.render(
   <Router>
     <App />
