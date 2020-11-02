@@ -9,7 +9,7 @@ class User extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchUsers
+        this.props.fetchUsers()
     }
 
 
@@ -23,7 +23,7 @@ class User extends Component {
     }
 }
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
     return {
         name: state.name
     }
