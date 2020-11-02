@@ -3,6 +3,6 @@ export function fetchUsers() {
         dispatch({ type: 'LOADING_USERS' })
         fetch('http://localhost:3000/users/1')
         .then(response =>  response.json())
-        .then(data => console.log(data))
+        .then(data => dispatch({ type: 'ADD_USERS', users: data}))
     }
 }

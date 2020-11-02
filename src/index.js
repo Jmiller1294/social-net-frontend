@@ -6,28 +6,28 @@ import usersReducer from './reducers/UsersReducer'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware , compose} from 'redux';
 import { combineReducers } from "redux";
 import UserContainer from './containers/UserContainer';
 
 
 const rootReducer = combineReducers({
-  users: usersReducer,
+  users: usersReducer
 })
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
-  rootReducer, applyMiddleware(thunk)
-)
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 ReactDOM.render(
-  <Router>
-    <Route exact path="/users" component={UserContainer} />
-    <Provider store={store}>
+  <Provider store={store}>
+    <Router>
+      <Route exact path="/users" component={UserContainer} />
       <App />
-    </Provider>
-  </Router>
+    </Router>
+  </Provider>
   ,
   document.getElementById('root')
 );
