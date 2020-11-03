@@ -12,7 +12,10 @@ class PostInput extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addPost(this.state)
-
+        this.setState({
+            content: '',
+            date: ''
+        })
     }
 
     handleChange = (event) => {
@@ -23,11 +26,8 @@ class PostInput extends Component {
 
 
     render() {
-        
         return (
-            
             <div>
-                
                 Posts:
                 {this.state.content}
                 <form onSubmit={event => this.handleSubmit(event)}>

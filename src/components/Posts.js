@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Posts = (props) => {
-    console.log(props)
-    
+    const { posts } = props;
+
     return (
         <div>
-            Hello
+           {posts && posts.map(post => <li key={post.id} >{post.content}</li>)}
         </div>
     )
 }

@@ -10,7 +10,7 @@ class PostsContainer extends Component {
         return (
             <div>
                 <PostInput />
-                <Posts posts={this.props.user.posts}/>
+                <Posts posts={this.props.posts}/>
             </div>
         )
     }
