@@ -18,7 +18,7 @@ class HomePage extends Component {
         return (
             <div>
                 {this.props.users.map(user => <li key={user.id}>{user.name}</li>)}
-                <PostsContainer users={this.props.users} />
+                <PostsContainer user={this.props.users} />
             </div>
         )
     }

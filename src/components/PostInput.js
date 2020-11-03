@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { addPost } from '../actions/addPost'
 
 class PostInput extends Component {
    
@@ -10,6 +11,8 @@ class PostInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.addPost(this.state)
+
     }
 
     handleChange = (event) => {
@@ -36,4 +39,4 @@ class PostInput extends Component {
         )
     }
 }
-export default connect()(PostInput);
+export default connect(null, { addPost })(PostInput);
