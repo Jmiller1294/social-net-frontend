@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import PostInput from '../components/PostInput'
 
 class PostsContainer extends Component {
 
-    state = {
-        content: '',
-        date: '',
-    }
-
     render() {
+        
         return (
             <div>
-                
+                <PostInput />
             </div>
         )
     }
 }
+export default connect()(PostsContainer);
