@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import PostInput from '../components/PostInput'
+import Posts from '../components/Posts'
 
 class PostsContainer extends Component {
 
@@ -9,8 +10,12 @@ class PostsContainer extends Component {
         return (
             <div>
                 <PostInput />
+                <Posts />
             </div>
         )
     }
 }
-export default connect()(PostsContainer);
+
+
+
+export default PostsContainer;

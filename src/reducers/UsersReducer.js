@@ -7,11 +7,11 @@ export default function UsersReducer(state = { users: [], loading: false }, acti
             loading: true
         }
         case 'ADD_USERS':
-            console.log(action.users)
+            console.log(action)
             
             return {
                 ...state,
-            users: [action.users],
+            users: action.users,
             loading: false
             }
             

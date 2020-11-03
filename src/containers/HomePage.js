@@ -6,9 +6,6 @@ import { fetchUsers } from '../actions/userActions'
 
 class HomePage extends Component {
 
-    
-   
-   
     componentDidMount() {
         this.props.fetchUsers()
     }
@@ -27,9 +24,8 @@ class HomePage extends Component {
     }
 }
 
-
-
 const mapStateToProps = state => {
+    console.log(state)
     return {
       users: state.users.users,
       loading: state.users.loading,
