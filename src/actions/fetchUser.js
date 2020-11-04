@@ -1,4 +1,4 @@
-export function fetchUsers() {
+export function fetchUser() {
     return (dispatch) => {
         dispatch({ type: 'LOADING_USERS' })
         fetch('http://localhost:3000/users/1')

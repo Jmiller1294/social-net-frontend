@@ -1,40 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PostsContainer from './PostsContainer';
 
-import { connect } from 'react-redux' 
-import { fetchUsers } from '../actions/fetchUser'
 
-class HomePage extends Component {
+const HomePage = (props) => {
 
-    componentDidMount() {
-        this.props.fetchUsers()
-    }
+    const { user } = props
 
-    getPosts() {
-    
-    }
-
-    render() {
-        return (
-            <div>
-                {this.props.users.name}
-                <PostsContainer posts={this.props.users.posts} />
-            </div>
-        )
-    }
+    return (
+        <div>
+            {user.name}
+            <PostsContainer posts={user.posts} />
+        </div>
+    )
 }
-
-const mapStateToProps = state => {
-    console.log(state)
-    return {
-      users: state.users.users,
-      loading: state.users.loading,
-    }
-  }
-
-
-const mapDispatchToProps = (dispatch) => ({
-    fetchUsers: () => dispatch(fetchUsers())
-})
-
-export default connect(mapStateToProps ,mapDispatchToProps)(HomePage);
+export default HomePage;
