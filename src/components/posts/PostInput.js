@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { addPost } from '../actions/addPost'
+import { addPost } from '../../actions/addPost'
 
 class PostInput extends Component {
    
@@ -28,7 +28,7 @@ class PostInput extends Component {
     render() {
         return (
             <div>
-                Posts:
+                <h2>Posts:</h2>
                 {this.state.content}
                 <form onSubmit={event => this.handleSubmit(event)}>
                     <label>Write A Post</label>

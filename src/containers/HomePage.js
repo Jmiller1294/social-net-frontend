@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PostsContainer from './PostsContainer';
 
 import { connect } from 'react-redux' 
-import { fetchUsers } from '../actions/userActions'
+import { fetchUsers } from '../actions/fetchUser'
 
 class HomePage extends Component {
 
