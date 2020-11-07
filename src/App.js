@@ -1,29 +1,37 @@
-import './App.css';
-import UserPage from './containers/UserPage'
-import { connect } from 'react-redux' 
-import { fetchUser } from './actions/fetchUser'
 import React, { Component } from 'react'
-import { Route} from 'react-router-dom';
+import UserContainer from './containers/UserContainer'
+import NavBar from './components/NavBar'
+import { fetchUser } from './actions/fetchUser'
+import { Route } from 'react-router-dom';
 
+import { connect } from 'react-redux'
 
 class App extends Component {
-  
+
+
   componentDidMount() {
     this.props.fetchUser()
   }
-
+  
   render() {
     return (
       <div className="App">
-            <UserPage user={this.props.user} />
+        <NavBar />
+        <Route exact path="/" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
       </div>
     );
   }
+
 }
 
-  const mapDispatchToProps = (dispatch) => ({
-      fetchUser: () => dispatch(fetchUser())
-  })
-  
-  
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = state => {
+  return {
+      user: state.users,
+      posts: state.users.posts,
+  }
+}
+const mapDispatchToProps = (dispatch) => ({
+  fetchUser: () => dispatch(fetchUser())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

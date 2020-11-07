@@ -4,9 +4,12 @@ const Friend = (props) => {
     const { friend } = props
 
     return (
-        <div>
-            <li>{friend.name}</li>
-        </div>
+        <li class='friend selected'>
+            <img />
+            <div class='name'>
+                {friend.name}
+            </div>
+        </li>
     )
 }
 

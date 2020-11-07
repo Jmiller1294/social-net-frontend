@@ -16,12 +16,12 @@ const NavBar = () => {
   return (
     <div className="topnav">
       <NavLink className="navbar"
-        to="/users/:id"
+        to="/"
         style={link}
         activeStyle={{
           background: 'darkblue'
         }}
-      >UserPage</NavLink >
+      >HomePage</NavLink >
       <NavLink className="navbar"
         to="/profile"
         style={link}

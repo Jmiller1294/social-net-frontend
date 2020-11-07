@@ -6,7 +6,10 @@ const Friends = (props) => {
 
     return (
         <div>
-            {friends && friends.map(friend => <Friend key={friend.id} friend={friend}/>)}
+        <h2>Friends List</h2>
+        <ul className="friend-list">
+            {friends && friends.map((friend, index) => <Friend key={index} friend={friend}/>)}
+        </ul>
         </div>
     )
 }

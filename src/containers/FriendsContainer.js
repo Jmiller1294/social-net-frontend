@@ -4,8 +4,8 @@ import Friends from '../components/friends/Friends'
 class FriendsContainer extends Component {
     render() {
         return(
-            <div>
-                <Friends friends={this.props.user.friends} />
+            <div className="friends-container">
+                <Friends friends={this.props.friends} />
             </div>
         )
     }

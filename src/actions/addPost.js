@@ -1,5 +1,5 @@
 export function addPost(data, userId) {
-     
+    
     return (dispatch) => {
         fetch(`http://localhost:3000/users/${userId}/posts`, {
             headers: {

@@ -1,5 +1,5 @@
-.App {
-  text-align: left;
+.body {
+  background-color: beige;
 }
 
 .postbox{
@@ -33,3 +33,24 @@
 .postcard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.profile-container {
+  text-align: center;
+}
+
+.friend-list { 
+  float:right;
+  text-align: right;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 100%;
+  background: #EEE;
+  list-style-type: none;
+}
+
+
+
+
+
