@@ -1,13 +1,13 @@
 import React from 'react';
-import Post from './Post'
+import Post from './Post';
 
 const Posts = (props) => {
-    const { posts } = props;
+    const { user,posts } = props;
 
     return (
-        <div>
-           {posts && posts.map(post => <Post key={post.id} post={post} />)}
-        </div>
+        <ul>
+           {posts && posts.map((post, index) => <Post key={index} post={post} />)}
+        </ul>
     )
 }
 export default Posts;

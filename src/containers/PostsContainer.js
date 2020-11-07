@@ -1,20 +1,19 @@
-import React, { Component, useReducer } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import PostInput from '../components/posts/PostInput'
 import Posts from '../components/posts/Posts'
+import { addPost } from  '../actions/addPost'
 
 class PostsContainer extends Component {
-
+    
     render() {
-        
         return (
             <div>
-                <PostInput />
-                <Posts posts={this.props.posts}/>
+                
             </div>
         )
     }
 }
 
 
-
-export default PostsContainer;
+export default connect(null, { addPost})(PostsContainer);

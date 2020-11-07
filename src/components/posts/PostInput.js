@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { addPost } from  '../../actions/addPost';
 import { connect } from 'react-redux'
-import { addPost } from '../../actions/addPost'
 
 class PostInput extends Component {
    
@@ -11,7 +11,7 @@ class PostInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addPost(this.state)
+        this.props.addPost(this.state, this.props.user.id)
         this.setState({
             content: '',
             date: ''
@@ -30,13 +30,13 @@ class PostInput extends Component {
             <div>
                 <h2>Posts:</h2>
                 {this.state.content}
-                <form onSubmit={event => this.handleSubmit(event)}>
-                    <label>Write A Post</label>
-                    <textarea onChange={event => this.handleChange(event)} name="content" value={this.state.content} />
-                    <input type="submit" value="Post" />
+                <form className="postbox" onSubmit={event => this.handleSubmit(event)}>
+                    <textarea onChange={event => this.handleChange(event)} name="content" value={this.state.content} placeholder="Whats on your mind?"/>
+                    <br></br>
+                    <input  type="submit" value="Post" />
                 </form>
             </div>
         )
     }
 }
-export default connect(null, { addPost })(PostInput);
+export default connect(null, { addPost})(PostInput);
