@@ -28,7 +28,7 @@ class PostInput extends Component {
     render() {
         return (
             <div>
-                <h2>Welcome, {this.props.user.name}</h2>
+                <h2 className="welcome">Welcome, {this.props.user.name}</h2>
                 {this.state.content}
                 <form className="postbox" onSubmit={event => this.handleSubmit(event)}>
                     <textarea onChange={event => this.handleChange(event)} name="content" value={this.state.content} placeholder="Whats on your mind?"/>

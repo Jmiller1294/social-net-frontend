@@ -5,7 +5,8 @@ const Posts = (props) => {
     const { user,posts } = props;
 
     return (
-        <ul>
+        <ul className="postlist">
+            <h3>Posts</h3>
            {posts && posts.map((post, index) => <Post key={index} post={post} />)}
         </ul>
     )
