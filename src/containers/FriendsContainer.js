@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Friends from '../components/friends/Friends'
+import Friends from '../components/friends/Friends';
 
 class FriendsContainer extends Component {
     render() {

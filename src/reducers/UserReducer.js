@@ -7,18 +7,12 @@ export default function UserReducer(state = { users: [], loading: false }, actio
             loading: true
         }
         case 'ADD_USERS':
-            console.log(state)
-            console.log(action)
-            
             return {
                 ...state,
             users: action.users,
             loading: false
             }
-        case 'ADD_POST':
-            console.log(state.users)
-            console.log(state.users.posts)
-            console.log(action)
+        case 'ADD_POST': 
             return {
                 ...state,
                 users: {
@@ -26,8 +20,15 @@ export default function UserReducer(state = { users: [], loading: false }, actio
                     posts: state.users.posts.concat(action.payload)
                 }  
             }
-    
-            
+        case 'DELETE_POST':
+            const posts = state.users.posts.filter(post => post.id !== action.payload)
+            return {
+                ...state,
+                users: {
+                    ...state.users,
+                    posts: posts
+                }
+            }
         default:
             return state;
     }

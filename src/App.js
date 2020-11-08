@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import UserContainer from './containers/UserContainer';
-import FriendsContainer from './containers/FriendsContainer'
+import FriendsContainer from './containers/FriendsContainer';
 import Profile from './containers/Profile';
 import NoMatch from './components/NoMatch';
+import NavBar from './components/NavBar';
 import { fetchUser } from './actions/fetchUser';
 import { Route , Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import NavBar from './components/NavBar';
+
 
 class App extends Component {
 
@@ -39,6 +40,7 @@ const mapStateToProps = state => {
       friends: state.users.friends
   }
 }
+
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: () => dispatch(fetchUser())
 })

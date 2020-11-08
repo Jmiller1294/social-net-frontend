@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 const Post = (props) => {
     const { post } = props;
@@ -10,7 +11,7 @@ const Post = (props) => {
     return (
         <div className="postcard">
             <p>{post.content}</p>
-            <button onClick={event => handleClick(event)}>Delete</button>
+            <Button className="deletebutton" onClick={event => handleClick(event)}>Delete Post</Button>
         </div>  
     )
 }

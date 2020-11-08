@@ -2,9 +2,9 @@ import '../App.css';
 import React, { Component } from 'react';
 import PostInput from '../components/posts/PostInput';
 import Posts from '../components/posts/Posts';
-import NewsContainer from './NewsContainer';
+import NewsContainer from './ArticlesContainer';
 import Layout from '../components/Layout';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { deletePost } from '../actions/deletePost';
 
 class UserContainer extends Component {
@@ -12,7 +12,7 @@ class UserContainer extends Component {
     
     render() {
         return (
-        <div>
+        <React.Fragment>
             <Layout>
             <div>
                 <PostInput user={this.props.user} posts={this.props.posts}/>
@@ -22,11 +22,9 @@ class UserContainer extends Component {
                 <NewsContainer/>
             </div>
             </Layout>
-        </div>
+        </React.Fragment>
         )
     }
 
 }
-
-
 export default connect(null, { deletePost })(UserContainer);

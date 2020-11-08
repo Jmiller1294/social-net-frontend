@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addPost } from  '../../actions/addPost';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap'
 
 class PostInput extends Component {
    
@@ -11,11 +12,18 @@ class PostInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addPost(this.state, this.props.user.id)
-        this.setState({
-            content: '',
-            date: ''
-        })
+        console.log(event.target)
+        if(this.state.content !== '') {
+            this.props.addPost(this.state, this.props.user.id)
+            this.setState({
+                content: '',
+                date: ''
+            })
+        }
+        else {
+            alert('Please write a post')
+        }
+
     }
 
     handleChange = (event) => {
@@ -29,11 +37,10 @@ class PostInput extends Component {
         return (
             <div>
                 <h2 className="welcome">Welcome, {this.props.user.name}</h2>
-                {this.state.content}
                 <form className="postbox" onSubmit={event => this.handleSubmit(event)}>
                     <textarea onChange={event => this.handleChange(event)} name="content" value={this.state.content} placeholder="Whats on your mind?"/>
                     <br></br>
-                    <input  type="submit" value="Post" />
+                    <Button as="input" type="submit" value="Post" />{' '}
                 </form>
             </div>
         )
