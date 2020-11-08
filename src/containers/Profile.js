@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Card } from 'react-bootstrap';
 
 
 class Profile extends Component {
@@ -7,11 +8,18 @@ class Profile extends Component {
         if(this.props.user){
         return (
             <div className="profile-container">
-                <h2>{this.props.user.name}</h2>
-                <p>{this.props.user.age}</p>
-                <p>{this.props.user.hobbies}</p>
-                <p>{this.props.user.hometown}</p>
-                <p>{this.props.user.occupation}</p>
+                <Card border="primary" style={{ width: '18rem' }}>
+                <Card.Img variant="top" src=''/>
+                <Card.Body>
+                <Card.Title>{this.props.user.name}</Card.Title>
+                <Card.Text>
+                    Age: {this.props.user.age}
+                </Card.Text>
+                </Card.Body>
+                </Card>
+                <p>Hobbies: {this.props.user.hobbies}</p>
+                <p>Hometown: {this.props.user.hometown}</p>
+                <p>Occupation: {this.props.user.occupation}</p>
             </div>
         )
         }
