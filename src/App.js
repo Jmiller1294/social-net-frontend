@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserContainer from './containers/UserContainer';
-import Profile from './containers/ProfileContainer';
+import FriendsContainer from './containers/FriendsContainer'
+import Profile from './containers/Profile';
 import NoMatch from './components/NoMatch';
 import { fetchUser } from './actions/fetchUser';
 import { Route , Switch} from 'react-router-dom';
@@ -23,7 +24,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
             <Route exact path="/profile" render={(props) => <Profile {...props} user={this.props.user} posts={this.props.posts} />}/>
-            <Route exact path="/friends" />
+            <Route exact path="/friends" render={(props) => <FriendsContainer {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
           </Switch>
           </Layout>
@@ -37,6 +38,7 @@ const mapStateToProps = state => {
   return {
       user: state.users,
       posts: state.users.posts,
+      friends: state.users.friends
   }
 }
 const mapDispatchToProps = (dispatch) => ({

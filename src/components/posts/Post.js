@@ -4,7 +4,7 @@ const Post = (props) => {
     const { post } = props;
 
     return (
-        <div class="postcard">
+        <div className="postcard">
             <p>{post.content}</p>
         </div>
                

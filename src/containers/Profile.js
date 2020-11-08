@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FriendsContainer from './FriendsContainer'
+
 
 class Profile extends Component {
     
@@ -12,7 +12,6 @@ class Profile extends Component {
                 <p>{this.props.user.hobbies}</p>
                 <p>{this.props.user.hometown}</p>
                 <p>{this.props.user.occupation}</p>
-                <FriendsContainer friends={this.props.user.friends}/>
             </div>
         )
         }
