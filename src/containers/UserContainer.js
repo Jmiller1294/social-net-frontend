@@ -4,7 +4,7 @@ import PostInput from '../components/posts/PostInput'
 import Posts from '../components/posts/Posts'
 import NewsContainer from './NewsContainer'
 import { Container, Row, Col} from 'react-bootstrap'
-
+import Layout from '../components/Layout';
 
 class UserContainer extends Component {
     
@@ -12,6 +12,7 @@ class UserContainer extends Component {
     render() {
         return (
         <div>
+            <Layout>
             <div>
                 <PostInput user={this.props.user} posts={this.props.posts}/>
                 <Posts user={this.props.user} posts={this.props.posts}/>
@@ -19,6 +20,7 @@ class UserContainer extends Component {
             <div>
                 <NewsContainer/>
             </div>
+            </Layout>
         </div>
         )
     }

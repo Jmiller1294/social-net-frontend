@@ -15,7 +15,7 @@ class NewsContainer extends Component {
         fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=UALpeYtc7riGUG5XKXU7kr8fYCeyodyZ') 
         .then(resp => resp.json())
         .then(articles => this.setState({
-            articles: articles.results.slice(0,10).map(article => ({ title: article.title, url: article.url }))
+            articles: articles.results.slice(0,20).map(article => ({ title: article.title, url: article.url }))
         })) 
     }
     

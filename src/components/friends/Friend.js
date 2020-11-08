@@ -1,15 +1,22 @@
 import React from 'react'
+import { Card } from 'react-bootstrap';
 
 const Friend = (props) => {
     const { friend } = props
 
     return (
-        <li class='friend selected'>
-            <img />
-            <div class='name'>
-                {friend.name}
-            </div>
-        </li>
+        <div>
+            <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+            <Card.Title>{friend.name}</Card.Title>
+            <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of
+                the card's content.
+            </Card.Text>
+            </Card.Body>
+            </Card>
+        </div>
     )
 }
 

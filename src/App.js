@@ -6,7 +6,7 @@ import NoMatch from './components/NoMatch';
 import { fetchUser } from './actions/fetchUser';
 import { Route , Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
-import Layout from './components/Layout';
+
 import NavBar from './components/NavBar';
 
 class App extends Component {
@@ -20,14 +20,12 @@ class App extends Component {
     return (
       <React.Fragment>
           <NavBar />
-          <Layout>
           <Switch>
             <Route exact path="/" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
             <Route exact path="/profile" render={(props) => <Profile {...props} user={this.props.user} posts={this.props.posts} />}/>
             <Route exact path="/friends" render={(props) => <FriendsContainer {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
           </Switch>
-          </Layout>
       </React.Fragment>
     );
   }
