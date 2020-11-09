@@ -8,7 +8,7 @@ const Posts = (props) => {
         <ul className="postlist">
             <h2>Posts</h2>
             <hr></hr>
-           {posts && posts.map(post => <Post key={post.id} post={post} delete={props.delete} />)}
+           {posts && posts.map(post => <Post key={post.id} user={user} post={post} delete={props.delete} />)}
         </ul>
     )
 }

@@ -9,8 +9,8 @@ import { deletePost } from '../actions/deletePost';
 
 class UserContainer extends Component {
     
-    
     render() {
+        //const user = this.props.users[this.props.match.params.id - 1]
         return (
         <React.Fragment>
             <Layout>

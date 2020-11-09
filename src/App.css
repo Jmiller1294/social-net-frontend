@@ -9,6 +9,14 @@
   margin: 10px;
   width: 50%;
 }
+
+.postpic {
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
 .postlist {
   position: relative;
   width: 70%;
@@ -23,6 +31,21 @@
 .articleslist {
   
 }
+
+.posttop {
+
+}
+
+.postbottom {
+  margin-bottom: 0;
+}
+
+.background {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 
 .postcard {
   word-wrap: break-word;
@@ -43,7 +66,7 @@
 .deletebutton {
   position: relative;
   left: 240px;
-  margin: 10px 10px 0px 10px;
+  margin: 1px 10px 0px 10px;
 }
 
 textarea {
