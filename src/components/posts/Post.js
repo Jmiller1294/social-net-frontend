@@ -1,6 +1,5 @@
-import React, { useReducer } from 'react'
+import React from 'react'
 import { Button } from 'react-bootstrap'
-import Image from 'react-bootstrap/Image'
 
 const Post = (props) => {
     const { post, user } = props;
@@ -8,15 +7,14 @@ const Post = (props) => {
     const handleClick = (event) => {
         props.delete(post.id)
     }
-
+    
     return (
         <div className="postcard">
-            Posted by:{user.name}
+            <b>Posted by:</b> {user.name}
             <hr className="posttop"></hr>
-                <p>{post.content}</p>
+                <strong><p>{post.content}</p></strong>
             <hr className="postbottom"></hr>
             <Button className="deletebutton" onClick={event => handleClick(event)}>Delete Post</Button>
-            <p>12-31-12</p>
         </div>  
     )
 }

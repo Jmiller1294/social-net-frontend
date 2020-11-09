@@ -1,5 +1,6 @@
 
 .welcome {
+  font-style: italic;
   text-align: center;
 }
 .postbox {
@@ -28,16 +29,15 @@
   left: 1200px
 }
 
-.articleslist {
-  
-}
-
-.posttop {
-
-}
-
 .postbottom {
   margin-bottom: 0;
+}
+
+.postdate {
+  position: relative;
+  left: -200px;
+  top: -30px;
+  margin: 1px 10px 0px 10px;
 }
 
 .background {
@@ -45,7 +45,6 @@
   width: 100%;
   margin-bottom: 10px;
 }
-
 
 .postcard {
   word-wrap: break-word;
