@@ -25,7 +25,7 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Item><Nav.Link href="/users/1">HomePage</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/user">HomePage</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/profile">Profile</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/friends">Friends</Nav.Link></Nav.Item>
                 </Nav>

@@ -1,4 +1,4 @@
-export default function UserReducer(state = { users: [], loading: false }, action) { 
+export default function RootReducer(state = { users: [], posts: [], friends: [], loading: false }, action) { 
     switch(action.type) {
         case 'LOADING_USERS': 
           return {
@@ -6,29 +6,27 @@ export default function UserReducer(state = { users: [], loading: false }, actio
             users: [...state.users],
             loading: true
         }
-        case 'ADD_USERS':
+        case 'ADD_USERS': 
+            console.log(action.users)
             return {
                 ...state,
             users: action.users,
-            loading: false
+            posts: action.users.posts,
+            friends: action.users.friends,
+            loading: false,
             }
         case 'ADD_POST': 
+            console.log(action)
             return {
                 ...state,
-                users: {
-                    ...state.users,
-                    posts: state.users.posts.concat(action.payload)
+                posts: state.posts.concat(action.payload)
                 }  
-            }
         case 'DELETE_POST':
-            const posts = state.users.posts.filter(post => post.id !== action.payload)
+            const posts = state.posts.filter(post => post.id !== action.payload)
             return {
                 ...state,
-                users: {
-                    ...state.users,
-                    posts: posts
+                posts: posts
                 }
-            }
         default:
             return state;
     }

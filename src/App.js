@@ -24,7 +24,7 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/users/1" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
+            <Route exact path="/user" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
             <Route exact path="/profile" render={(props) => <Profile {...props} user={this.props.user}/>}/>
             <Route exact path="/friends" render={(props) => <FriendsContainer {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
@@ -38,8 +38,8 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
       user: state.users,
-      posts: state.users.posts,
-      friends: state.users.friends
+      posts: state.posts,
+      friends: state.friends
   }
 }
 
