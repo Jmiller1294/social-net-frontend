@@ -1,3 +1,4 @@
+import './App.css';
 import React, { Component } from 'react';
 import Welcome from './components/Welcome';
 import UserContainer from './containers/UserContainer';
@@ -48,3 +49,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

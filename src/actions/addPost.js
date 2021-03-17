@@ -1,6 +1,6 @@
 export function addPost(data, userId) {
     return (dispatch) => {
-        fetch(`http://localhost:3000/users/${userId}/posts`, {
+        fetch(`http://localhost:3001/users/${userId}/posts`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -9,6 +9,9 @@ export function addPost(data, userId) {
             body: JSON.stringify(data)
         })
         .then(resp => resp.json())
-        .then(post => dispatch({ type: 'ADD_POST', payload: post}))
+        .then(post => {
+            return dispatch({ type: 'ADD_POST', payload: post})
+        })
     }
 }
+

@@ -12,9 +12,12 @@ class PostInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+       
         console.log(event.target)
         if(this.state.content !== '') {
+            console.log('a')
             this.props.addPost(this.state, this.props.user.id)
+            console.log('g')
             this.setState({
                 content: '',
                 date: ''
@@ -35,7 +38,7 @@ class PostInput extends Component {
 
     render() {
         return (
-            <div>
+            <div className="post-input-container">
                 <h2 className="welcome">Hello, {this.props.user.name}</h2>
                 <form className="postbox" onSubmit={event => this.handleSubmit(event)}>
                     <textarea onChange={event => this.handleChange(event)} name="content" value={this.state.content} placeholder="Whats on your mind?"/>
@@ -47,3 +50,4 @@ class PostInput extends Component {
     }
 }
 export default connect(null, { addPost})(PostInput);
+

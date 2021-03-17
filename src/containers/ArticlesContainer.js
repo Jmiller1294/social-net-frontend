@@ -22,9 +22,9 @@ class ArticlesContainer extends Component {
 
     render() { 
         return (
-            <div className='articles-container'>
+            <>
                 <Articles articles={this.state.articles}/>
-            </div>
+            </>
         )
     }
 }

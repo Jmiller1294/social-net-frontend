@@ -1,4 +1,3 @@
-import '../App.css';
 import React, { Component } from 'react';
 import PostInput from '../components/posts/PostInput';
 import Posts from '../components/posts/Posts';
@@ -14,17 +13,12 @@ class UserContainer extends Component {
         return (
         <React.Fragment>
             <Layout>
-            <div>
                 <PostInput user={this.props.user} posts={this.props.posts}/>
                 <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
-            </div>
-            <div>
                 <NewsContainer/>
-            </div>
             </Layout>
         </React.Fragment>
         )
     }
-
 }
 export default connect(null, { deletePost })(UserContainer);

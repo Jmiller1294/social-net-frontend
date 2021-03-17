@@ -7,6 +7,7 @@ const Post = (props) => {
     const handleClick = (event) => {
         props.delete(post.id)
     }
+
     
     return (
         <div className="postcard">
@@ -15,6 +16,7 @@ const Post = (props) => {
                 <strong><p>{post.content}</p></strong>
             <hr className="postbottom"></hr>
             <Button className="deletebutton" onClick={event => handleClick(event)}>Delete Post</Button>
+            <button onClick={() => props.pinned(post)}>Pin</button>
         </div>  
     )
 }
