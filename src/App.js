@@ -23,6 +23,7 @@ class App extends Component {
     return (
       <React.Fragment>
           <NavBar />
+          <div className="container">
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route exact path="/user" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
@@ -30,6 +31,7 @@ class App extends Component {
             <Route exact path="/friends" render={(props) => <FriendsContainer {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
           </Switch>
+          </div>
       </React.Fragment>
     );
   }

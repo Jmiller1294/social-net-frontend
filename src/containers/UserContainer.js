@@ -11,13 +11,11 @@ class UserContainer extends Component {
     render() {
         //const user = this.props.users[this.props.match.params.id - 1]
         return (
-        <React.Fragment>
-            <Layout>
+            <React.Fragment>
                 <PostInput user={this.props.user} posts={this.props.posts}/>
                 <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
                 <NewsContainer/>
-            </Layout>
-        </React.Fragment>
+            </React.Fragment>
         )
     }
 }
