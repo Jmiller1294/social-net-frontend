@@ -7,7 +7,7 @@ class Profile extends Component {
     render() {
         if(this.props.user){
         return (
-            <div className="profile-container">
+            <div className="container">
                 <Card border="primary" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={img1}/>
                     <Card.Body>

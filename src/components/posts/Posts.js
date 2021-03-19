@@ -62,7 +62,6 @@ class Posts extends Component {
                 <div className="posts-container">
                     <ul className="postlist">   
                         <h2>Posts</h2>
-                    <hr></hr>
                         <label>Search</label>
                         <form>
                             <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>

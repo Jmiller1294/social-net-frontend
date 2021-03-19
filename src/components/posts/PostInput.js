@@ -12,7 +12,6 @@ class PostInput extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-       
         console.log(event.target)
         if(this.state.content !== '') {
             console.log('a')
@@ -34,7 +33,6 @@ class PostInput extends Component {
             [event.target.name]: event.target.value
         })
     }
-
 
     render() {
         return (
