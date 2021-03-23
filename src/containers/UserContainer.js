@@ -7,6 +7,17 @@ import { connect } from 'react-redux';
 import { deletePost } from '../actions/deletePost';
 
 class UserContainer extends Component {
+
+    getNews() {
+        const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=ed7a9fd498774d808aeea40c3b299040'
+        fetch(url)
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+    }
+
+    componentDidMount() {
+        this.getNews()
+    }
     
     render() {
         //const user = this.props.users[this.props.match.params.id - 1]
