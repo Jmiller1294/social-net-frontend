@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 
 export const Grid = styled.div`
-  border: 1px solid red;
+ 
 `;
 
 export const Row = styled.div`
@@ -18,8 +18,9 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   flex: ${ (props) => props.size};
-  border: 1px solid green;
+  
   height 100%;
+  padding: 10px;
 `;
 
 
