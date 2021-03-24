@@ -5,6 +5,25 @@ import Articles from '../components/articles/Articles';
 import Layout from '../components/Layout';
 import { connect } from 'react-redux';
 import { deletePost } from '../actions/deletePost';
+import styled from 'styled-components';
+
+
+export const Grid = styled.div`
+  border: 1px solid red;
+`;
+
+export const Row = styled.div`
+  display: flex;
+`;
+
+export const Col = styled.div`
+  flex: ${ (props) => props.size};
+  border: 1px solid green;
+  height 100%;
+`;
+
+
+
 
 class UserContainer extends Component {
     state = {
@@ -27,10 +46,24 @@ class UserContainer extends Component {
     render() {
         //const user = this.props.users[this.props.match.params.id - 1]
         return (
-            <div className="container">
-                <PostInput user={this.props.user} posts={this.props.posts}/>
-                {/*<Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>*/}
+            <div>
+                <Grid>
+                    <Row>
+                        <Col size={1}>
+                            Double
+                        </Col>
+                        <Col size={2}>
+                            <PostInput user={this.props.user} posts={this.props.posts}/>
+                            <Articles articles={this.state.articles}/>
+                        </Col>
+                        <Col size={1}>
+                            <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
+                        </Col>
+                    </Row>
+                </Grid>
+                {/*<PostInput user={this.props.user} posts={this.props.posts}/>
                 <Articles articles={this.state.articles}/>
+                <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>*/}
             </div>
         )
     }
