@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card  from 'react-bootstrap/Card';
 import img1 from '../assets/profile.jpg';
 
-class Profile extends Component {
+class ProfilePage extends Component {
     
     render() {
         if(this.props.user){
@@ -36,4 +36,4 @@ class Profile extends Component {
         }
     }
 }
-export default Profile
+export default ProfilePage;

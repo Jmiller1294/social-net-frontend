@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PostInput from '../components/posts/PostInput';
 import Posts from '../components/posts/Posts';
 import Articles from '../components/articles/Articles';
+import FriendsList from '../components/friends/FriendsList';
 import { connect } from 'react-redux';
 import { deletePost } from '../actions/deletePost';
 import styled from 'styled-components';
@@ -22,7 +23,7 @@ export const Col = styled.div`
 `;
 
 
-class UserContainer extends Component {
+class Homepage extends Component {
     state = {
         articles: []
     }
@@ -47,22 +48,19 @@ class UserContainer extends Component {
                 <Grid>
                     <Row>
                         <Col size={1}>
-                            
+                            <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
                         </Col>
                         <Col size={2}>
                             <PostInput user={this.props.user} posts={this.props.posts}/>
                             <Articles articles={this.state.articles}/>
                         </Col>
                         <Col size={1}>
-                            <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
+                            <FriendsList/>
                         </Col>
                     </Row>
                 </Grid>
-                {/*<PostInput user={this.props.user} posts={this.props.posts}/>
-                <Articles articles={this.state.articles}/>
-                <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>*/}
             </div>
         )
     }
 }
-export default connect(null, { deletePost })(UserContainer);
+export default connect(null, { deletePost })(Homepage);

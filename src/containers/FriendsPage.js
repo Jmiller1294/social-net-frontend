@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Friends from '../components/friends/Friends';
 
-class FriendsContainer extends Component {
+class FriendsPage extends Component {
     render() {
         return(
             <div className="container">
@@ -10,4 +10,4 @@ class FriendsContainer extends Component {
         )
     }
 }
-export default FriendsContainer;
+export default FriendsPage;

@@ -41,9 +41,9 @@ class Posts extends Component {
             return(
                 <div className="posts-container">
                     <ul className="postlist">   
-                        <h2>Posts</h2>
+                        <h3>Recent Posts</h3>
                     <hr></hr>
-                        <label>Search</label>
+                        <label>Search Posts</label>
                         <form>
                             <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                             <input type="text" onChange={event => this.handleChange(event)} name="text" value={this.state.searchTerm}/>
@@ -61,7 +61,7 @@ class Posts extends Component {
             return (
                 <div className="posts-container">
                     <ul className="postlist">   
-                        <h2>Posts</h2>
+                        <h3>Recent Posts</h3>
                         <label>Search Posts</label>
                         <form>
                             <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>

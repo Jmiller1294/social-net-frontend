@@ -1,9 +1,9 @@
 import './App.css';
 import React, { Component } from 'react';
 import Welcome from './components/Welcome';
-import UserContainer from './containers/UserContainer';
-import FriendsContainer from './containers/FriendsContainer';
-import Profile from './containers/Profile';
+import HomePage from './containers/HomePage';
+import FriendsPage from './containers/FriendsPage';
+import ProfilePage from './containers/ProfilePage';
 import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
 import styled from 'styled-components';
@@ -31,9 +31,9 @@ class App extends Component {
         <Container>
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/user" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
-            <Route exact path="/profile" render={(props) => <Profile {...props} user={this.props.user}/>}/>
-            <Route exact path="/friends" render={(props) => <FriendsContainer {...props} friends={this.props.friends}/>}/>
+            <Route exact path="/user" render={(props) => <HomePage {...props} user={this.props.user} posts={this.props.posts} />}/>
+            <Route exact path="/profile" render={(props) => <ProfilePage {...props} user={this.props.user}/>}/>
+            <Route exact path="/friends" render={(props) => <FriendsPage {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
           </Switch>
         </Container>
