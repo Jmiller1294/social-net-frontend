@@ -51,7 +51,7 @@ class UserContainer extends Component {
                 <Grid>
                     <Row>
                         <Col size={1}>
-                            Double
+                            
                         </Col>
                         <Col size={2}>
                             <PostInput user={this.props.user} posts={this.props.posts}/>

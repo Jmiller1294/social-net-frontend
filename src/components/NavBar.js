@@ -1,37 +1,46 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
 
-const Styles = styled.div`
-    .navbar {
-        background-color: #191970;
-    }
-
-    .navbar-brand, .navbar-nav .nav-link {
-        color: #bbb;
-    }
-
-    &:hover {
-        color: white
-    }
+export const Row = styled.div`
+   display: flex;
+   background-color: #051525;
+   height: 40px;
 `;
+
+export const Nav = styled.ul`
+    display: inline;
+    list-style: none;
+    float: right;
+    padding: 5px;
+`;
+
+export const Logo = styled.img`
+    float: left;
+`;
+
+export const ListItem = styled.li`
+    color: #fff;
+    display: inline;
+    margin-right: 25px;
+    margin-left: 10px;
+`
+
 
 const NavBar = () => {
     return (
-        <Styles>
-            <Navbar expand='lg'>
-                <Navbar.Brand href="/">Social Net</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto">
-                    <Nav.Item><Nav.Link href="/user">HomePage</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/profile">Profile</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/friends">Friends</Nav.Link></Nav.Item>
-                </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-        </Styles>
+        <Row>
+            <Logo src="../assets/profile.jpg" alt="logo"/>
+            <Nav>
+               <ListItem><a href="/user">Home</a></ListItem>
+               <ListItem><a href="/profile">Profile</a></ListItem>
+               <ListItem><a href="/friends">Friends</a></ListItem>
+               <ListItem><a href="#">About</a></ListItem>
+               <ListItem><a href="#">Random</a></ListItem>
+            </Nav>
+        </Row>
+           
+        
     )
 }
 export default NavBar;
