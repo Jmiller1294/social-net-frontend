@@ -51,11 +51,13 @@ class Homepage extends Component {
                             <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
                         </Col>
                         <Col size={2}>
+                            <h2 className="welcome">Hello, {this.props.user.name}</h2>
                             <PostInput user={this.props.user} posts={this.props.posts}/>
                             <Articles articles={this.state.articles}/>
                         </Col>
                         <Col size={1}>
-                            <FriendsList/>
+                            <h3>Friends List</h3>
+                            <FriendsList friends={this.props.friends}/>
                         </Col>
                     </Row>
                 </Grid>

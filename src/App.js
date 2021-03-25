@@ -31,7 +31,7 @@ class App extends Component {
         <Container>
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route exact path="/user" render={(props) => <HomePage {...props} user={this.props.user} posts={this.props.posts} />}/>
+            <Route exact path="/user" render={(props) => <HomePage {...props} user={this.props.user} posts={this.props.posts} friends={this.props.friends} />}/>
             <Route exact path="/profile" render={(props) => <ProfilePage {...props} user={this.props.user}/>}/>
             <Route exact path="/friends" render={(props) => <FriendsPage {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
