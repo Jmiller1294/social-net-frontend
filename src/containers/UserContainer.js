@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import PostInput from '../components/posts/PostInput';
 import Posts from '../components/posts/Posts';
 import Articles from '../components/articles/Articles';
-import Layout from '../components/Layout';
 import { connect } from 'react-redux';
 import { deletePost } from '../actions/deletePost';
 import styled from 'styled-components';
-
 
 export const Grid = styled.div`
  
@@ -22,8 +20,6 @@ export const Col = styled.div`
   height 100%;
   padding: 10px;
 `;
-
-
 
 
 class UserContainer extends Component {

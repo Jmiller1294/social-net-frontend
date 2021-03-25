@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+
 
 .clearfix:after {
   content: "";
@@ -15,10 +13,6 @@
   padding: 0;
 }
 
-.welcome {
-  font-style: italic;
-  text-align: center;
-}
 .postbox {
   position: relative;
   padding: 10px;
@@ -56,11 +50,6 @@
   margin: 1px 10px 0px 10px;
 }
 
-.background {
-  height: 500px;
-  width: 100%;
-  margin-bottom: 10px;
-}
 
 .postcard {
   position: relative;
@@ -112,8 +101,6 @@ h2{
   padding: 0;
 }
 
-.post-input-container {
-}
 
 .article-card {
   border-radius: 5px;

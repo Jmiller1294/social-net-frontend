@@ -6,11 +6,16 @@ import FriendsContainer from './containers/FriendsContainer';
 import Profile from './containers/Profile';
 import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
+import styled from 'styled-components';
 import { fetchUser } from './actions/fetchUser';
 import { Route , Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
 
-
+export const Container = styled.div`
+  font-family: 'Lato', sans-serif;
+  margin-left: 5px;
+  margin-right: 2px;
+`
 
 class App extends Component {
 
@@ -22,7 +27,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-          <NavBar />
+        <NavBar/>
+        <Container>
           <Switch>
             <Route exact path="/" component={Welcome} />
             <Route exact path="/user" render={(props) => <UserContainer {...props} user={this.props.user} posts={this.props.posts} />}/>
@@ -30,7 +36,8 @@ class App extends Component {
             <Route exact path="/friends" render={(props) => <FriendsContainer {...props} friends={this.props.friends}/>}/>
             <Route component={NoMatch} />
           </Switch>
-      </React.Fragment>
+        </Container>
+        </React.Fragment>
     );
   }
 
