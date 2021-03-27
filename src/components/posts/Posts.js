@@ -67,7 +67,7 @@ class Posts extends Component {
                             <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                             <input type="text" onChange={event => this.handleChange(event)} name="text" value={this.state.searchTerm}/>
                         </form>
-                    {filteredPosts && filteredPosts.map(post => 
+                    {filteredPosts && filteredPosts.slice(0,4).map(post => 
                     <Post key={post.id} user={this.props.user} 
                     post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                     </ul>
