@@ -29,10 +29,10 @@ const FriendsList = (props) => {
       <List>
         {props.friends.map(friend => {
           if(friend.status === "online") {
-            return <ListItem>{friend.name}: <Online>{friend.status}</Online></ListItem>
+            return <ListItem key={friend.id}>{friend.name}: <Online>{friend.status}</Online></ListItem>
           }
           else {
-            return <ListItem>{friend.name}: <Offline>{friend.status}</Offline></ListItem>
+            return <ListItem key={friend.id}>{friend.name}: <Offline>{friend.status}</Offline></ListItem>
           }
         })
         }

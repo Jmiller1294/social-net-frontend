@@ -35,8 +35,7 @@ const NavBar = () => {
                <ListItem><a href="/user">Home</a></ListItem>
                <ListItem><a href="/profile">Profile</a></ListItem>
                <ListItem><a href="/friends">Friends</a></ListItem>
-               <ListItem><a href="#">About</a></ListItem>
-               <ListItem><a href="#">Random</a></ListItem>
+               <ListItem><a href="/about">About</a></ListItem>
             </Nav>
         </Row>
            

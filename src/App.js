@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
-import Welcome from './components/Welcome';
+import WelcomePage from './components/WelcomePage';
+import AboutPage from './components/AboutPage';
 import HomePage from './containers/HomePage';
 import FriendsPage from './containers/FriendsPage';
 import ProfilePage from './containers/ProfilePage';
@@ -30,14 +31,15 @@ class App extends Component {
         <NavBar/>
         <Container>
           <Switch>
-            <Route exact path="/" component={Welcome} />
+            <Route exact path="/" component={WelcomePage} />
             <Route exact path="/user" render={(props) => <HomePage {...props} user={this.props.user} posts={this.props.posts} friends={this.props.friends} />}/>
             <Route exact path="/profile" render={(props) => <ProfilePage {...props} user={this.props.user}/>}/>
             <Route exact path="/friends" render={(props) => <FriendsPage {...props} friends={this.props.friends}/>}/>
+            <Route exact path="/about" component={AboutPage}/>
             <Route component={NoMatch} />
           </Switch>
         </Container>
-        </React.Fragment>
+      </React.Fragment>
     );
   }
 

@@ -22,11 +22,10 @@ export const PostArea = styled.textarea`
 `
 
 export const PostButton = styled.button`
-    letter-spacing: 1px;
     width: 100px;
     color: #fff;
     background-color:#007bff;
-    border-radius: 5px;
+    border-radius: 15px;
 `
 
 
@@ -65,7 +64,7 @@ class PostInput extends Component {
                 <PostForm className="postbox" onSubmit={event => this.handleSubmit(event)}>
                     <PostArea onChange={event => this.handleChange(event)} name="content" value={this.state.content} placeholder="Whats on your mind?"/>
                     <br></br>
-                    <PostButton as="input" type="submit" value="Post" />{' '}
+                    <PostButton as="input" type="submit" value="POST" />{' '}
                 </PostForm>
             </PostInputContainer>
         )

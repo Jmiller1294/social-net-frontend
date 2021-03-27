@@ -15,22 +15,24 @@ export const PostCard = styled.div`
     transition: 0.3s;
 `
 export const PostContent = styled.p`
+    text-align: center;
     font-weight: bold;
     min-height: 100px;
-    padding: 5px;   
+    padding-top: 30px;  
+    padding-bottom: 30px; 
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     margin: 10px auto 10px auto;
 `   
 export const DeleteButton = styled.button`
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 10px 10px 10px auto;
     color: #fff;
     background-color:#007bff;
 `
 
 export const PinButton = styled.button`
-    border-radius: 5px;
+    border-radius: 15px;
     color: #fff;
     background-color:#007bff;
 ` 
@@ -39,7 +41,8 @@ const Post = (props) => {
 
     const { post, user } = props;
 
-    const handleClick = (event) => {
+    const handleClick = (post) => {
+        console.log(props)
         props.delete(post.id)
     }
 
@@ -48,7 +51,7 @@ const Post = (props) => {
         <PostCard>
             <b>Posted by:</b> {user.name}
             <PostContent>{post.content}</PostContent>
-            <DeleteButton onClick={event => handleClick(event)}>Delete Post</DeleteButton>
+            <DeleteButton onClick={() => handleClick(post)}>Delete Post</DeleteButton>
             <PinButton onClick={() => props.pinned(post)}>Pin</PinButton>
         </PostCard>
     )

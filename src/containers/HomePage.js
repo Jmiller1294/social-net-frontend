@@ -17,11 +17,14 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   flex: ${ (props) => props.size};
-  
   height 100%;
   padding: 10px;
 `;
 
+export const Header = styled.h2`
+  padding-top: 0;
+  text-align: center;
+`;
 
 class Homepage extends Component {
     state = {
@@ -51,7 +54,7 @@ class Homepage extends Component {
                             <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
                         </Col>
                         <Col size={2}>
-                            <h2 className="welcome">Hello, {this.props.user.name}</h2>
+                            <Header>Hello, {this.props.user.name}</Header>
                             <PostInput user={this.props.user} posts={this.props.posts}/>
                             <Articles articles={this.state.articles}/>
                         </Col>
