@@ -38,15 +38,12 @@ export const PinButton = styled.button`
 ` 
 
 const Post = (props) => {
-
     const { post, user } = props;
 
     const handleClick = (post) => {
-        console.log(props)
         props.delete(post.id)
     }
 
-    
     return (
         <PostCard>
             <b>Posted by:</b> {user.name}

@@ -6,6 +6,7 @@ import FriendsList from '../components/friends/FriendsList';
 import { connect } from 'react-redux';
 import { deletePost } from '../actions/deletePost';
 import styled from 'styled-components';
+import Weather from '../components/Weather';
 
 export const Grid = styled.div`
  
@@ -55,6 +56,7 @@ class Homepage extends Component {
                         </Col>
                         <Col size={2}>
                             <Header>Hello, {this.props.user.name}</Header>
+                            <Weather/>
                             <PostInput user={this.props.user} posts={this.props.posts}/>
                             <Articles articles={this.state.articles}/>
                         </Col>
