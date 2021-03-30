@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { deletePost } from '../actions/deletePost';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import img1 from '../assets/profile.jpg';
+import AboutMe from '../components/AboutMe';
+import Pictures from '../components/Pictures';
+import Posts from '../components/posts/Posts';
 
 export const Grid = styled.div`
 
@@ -19,7 +24,12 @@ export const Col = styled.div`
 export const ProfilePic = styled.img`
     height: 240px;
     width: 200px;
-`
+`;
+
+export const UserName = styled.h2`
+
+`;
+
 
 class ProfilePage extends Component {
     
@@ -30,23 +40,27 @@ class ProfilePage extends Component {
             <Grid>
                 <Row>
                     <Col size={1}>
+                        <UserName>{this.props.user.name}</UserName>
                         <ProfilePic src={img1} alt='profile'/>
                     </Col>
                 </Row>
                 <Row>
                     <Col size={1}>
-                        <h2>About Me</h2>
-                        <hr></hr>
-                        <p>Age: {this.props.user.age}</p>
-                        <p>Hobbies: {this.props.user.hobbies}</p>
-                        <p>Hometown: {this.props.user.hometown}</p>
-                        <p>Occupation: {this.props.user.occupation}</p>
+                        <AboutMe user={this.props.user} />
                     </Col>
                 </Row>
                 <Row>
                     <Col size={1}>
-                        <h2>About Me</h2>
+                        <h2>Pictures</h2>
                         <hr></hr>
+                        <Pictures />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size={1}>
+                        <h2>All Posts</h2>
+                        <hr></hr>
+                        <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
                     </Col>
                 </Row>
             </Grid>
@@ -61,7 +75,7 @@ class ProfilePage extends Component {
         }
     }
 }
-export default ProfilePage;
+export default connect(null, { deletePost })(ProfilePage);
 
 
 // render() { 

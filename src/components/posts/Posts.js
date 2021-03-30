@@ -53,7 +53,6 @@ class Posts extends Component {
             return (
                 <PostsContainer>
                     <PostsList>
-                        <h3>Recent Posts</h3>
                         {filteredPosts && filteredPosts.slice(0,4).map(post => 
                         <Post key={post.id} user={this.props.user} 
                         post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}

@@ -33,7 +33,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={WelcomePage} />
             <Route exact path="/user" render={(props) => <HomePage {...props} user={this.props.user} posts={this.props.posts} friends={this.props.friends} />}/>
-            <Route exact path="/profile" render={(props) => <ProfilePage {...props} user={this.props.user}/>}/>
+            <Route exact path="/profile" render={(props) => <ProfilePage {...props} user={this.props.user} posts={this.props.posts} />}/>
             <Route exact path="/friends" render={(props) => <FriendsPage {...props} friends={this.props.friends}/>}/>
             <Route exact path="/about" component={AboutPage}/>
             <Route component={NoMatch} />

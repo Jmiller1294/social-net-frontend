@@ -52,6 +52,7 @@ class Homepage extends Component {
                 <Grid>
                     <Row>
                         <Col size={1}>
+                            <h3>Recent Posts</h3>
                             <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
                         </Col>
                         <Col size={2}>
