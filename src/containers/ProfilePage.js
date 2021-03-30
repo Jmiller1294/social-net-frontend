@@ -1,30 +1,55 @@
 import React, { Component } from 'react';
-import Card  from 'react-bootstrap/Card';
+import styled from 'styled-components';
 import img1 from '../assets/profile.jpg';
 
+export const Grid = styled.div`
+
+`;
+
+export const Row = styled.div`
+  display: flex;
+`;
+
+export const Col = styled.div`
+  flex: ${ (props) => props.size};
+  height 100%;
+  padding: 10px;
+`;
+
+export const ProfilePic = styled.img`
+    height: 240px;
+    width: 200px;
+`
+
 class ProfilePage extends Component {
+    
     
     render() {
         if(this.props.user){
         return (
-            <div className="container">
-                <Card border="primary" style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={img1}/>
-                    <Card.Body>
-                        <Card.Title>
-                            {this.props.user.name}
-                        </Card.Title>
-                        <Card.Text>    
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <h2>About Me</h2>
-                <hr></hr>
-                <p>Age: {this.props.user.age}</p>
-                <p>Hobbies: {this.props.user.hobbies}</p>
-                <p>Hometown: {this.props.user.hometown}</p>
-                <p>Occupation: {this.props.user.occupation}</p>
-            </div>
+            <Grid>
+                <Row>
+                    <Col size={1}>
+                        <ProfilePic src={img1} alt='profile'/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size={1}>
+                        <h2>About Me</h2>
+                        <hr></hr>
+                        <p>Age: {this.props.user.age}</p>
+                        <p>Hobbies: {this.props.user.hobbies}</p>
+                        <p>Hometown: {this.props.user.hometown}</p>
+                        <p>Occupation: {this.props.user.occupation}</p>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size={1}>
+                        <h2>About Me</h2>
+                        <hr></hr>
+                    </Col>
+                </Row>
+            </Grid>
         )
         }
         else{
