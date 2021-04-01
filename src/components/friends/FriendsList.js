@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const FriendsListContainer = styled.div`
+  position: fixed;
+  width: 23%;
   border: 2px solid black;
-  height: 800px;
+  border-radius: 5px;
+  height: 868px;
+  margin-top: 40px;
 `
 export const List = styled.ul`
   list-style: none;
@@ -22,10 +26,14 @@ export const Offline = styled.span`
 export const Online = styled.span`
   color: green;
 `
+export const Header = styled.h3`
+    text-align: center;
+`
 
 const FriendsList = (props) => {
   return (
-    <Container>
+    <FriendsListContainer>
+      <Header>Friends List</Header>
       <List>
         {props.friends.map(friend => {
           if(friend.status === "online") {
@@ -37,7 +45,7 @@ const FriendsList = (props) => {
         })
         }
       </List>
-    </Container>
+    </FriendsListContainer>
   )
 } 
 export default FriendsList;

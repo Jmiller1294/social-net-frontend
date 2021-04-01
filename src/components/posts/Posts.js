@@ -4,10 +4,16 @@ import styled from 'styled-components';
 
 export const PostsContainer = styled.div`
     padding: 0;
+    position: fixed;
+    width: 23%;
 `
 export const PostsList = styled.ul`
     padding: 0;
     list-style: none;
+`
+
+export const Header = styled.h3`
+    text-align: center;
 `
 
 
@@ -52,6 +58,7 @@ class Posts extends Component {
             filteredPosts.sort(function(a,b) {return a.id > b.id ? -1 : b.id > a.id ? 1 : 0})
             return (
                 <PostsContainer>
+                    <Header>Recent Posts</Header>
                     <PostsList>
                         {filteredPosts && filteredPosts.slice(0,4).map(post => 
                         <Post key={post.id} user={this.props.user} 
