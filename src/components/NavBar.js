@@ -32,7 +32,7 @@ export const ListItem = styled.li`
 const NavBar = () => {
     return (
         <Row>
-            <Logo src={profile} alt="logo"/>
+            <a href="/"><Logo src={profile} alt="logo"/></a>
             <Nav>
                <ListItem><a href="/user">Home</a></ListItem>
                <ListItem><a href="/profile">Profile</a></ListItem>

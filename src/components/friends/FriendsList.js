@@ -8,6 +8,8 @@ export const FriendsListContainer = styled.div`
   border-radius: 5px;
   height: 868px;
   margin-top: 40px;
+  background-color: rgb(245, 245, 245);
+  
 `
 export const List = styled.ul`
   list-style: none;
