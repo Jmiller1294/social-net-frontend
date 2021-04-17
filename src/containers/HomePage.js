@@ -29,7 +29,8 @@ export const Header = styled.h2`
 
 class Homepage extends Component {
     state = {
-        articles: []
+        articles: [],
+        allPosts: false
     }
 
     getNews() {
@@ -52,7 +53,7 @@ class Homepage extends Component {
                 <Grid>
                     <Row>
                         <Col size={1}>
-                            <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
+                            <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost} allPosts={this.state.allPosts}/>
                         </Col>
                         <Col size={2}>
                             <Header>Hello, {this.props.user.name}</Header>

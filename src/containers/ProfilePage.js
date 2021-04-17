@@ -8,7 +8,7 @@ import Pictures from '../components/Pictures';
 import Posts from '../components/posts/Posts';
 
 export const Grid = styled.div`
-
+    
 `;
 
 export const Row = styled.div`
@@ -32,12 +32,17 @@ export const UserName = styled.h2`
 
 
 class ProfilePage extends Component {
+
+    state = {
+        allPosts: true
+    }
     
     
     render() {
         if(this.props.user){
         return (
             <Grid>
+                {console.log(this.props)}
                 <Row>
                     <Col size={1}>
                         <UserName>{this.props.user.name}</UserName>
@@ -60,7 +65,7 @@ class ProfilePage extends Component {
                     <Col size={1}>
                         <h2>All Posts</h2>
                         <hr></hr>
-                        <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost}/>
+                        <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost} allPosts={this.state.allPosts}/>
                     </Col>
                 </Row>
             </Grid>
