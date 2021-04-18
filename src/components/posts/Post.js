@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const PostCard = styled.div`
+export const PostCard = styled.li`
     position: relative; 
-    width: 100%;
+    width: ${ (props) => props.width + "%"};
     min-height: 175px;
     background-color: rgb(245, 245, 245);
     margin: 10px auto 10px auto;
@@ -45,7 +45,7 @@ const Post = (props) => {
     }
 
     return (
-        <PostCard>
+        <PostCard width={props.width}>
             <b>Posted by:</b> {user.name}
             <PostContent>{post.content}</PostContent>
             <DeleteButton onClick={() => handleClick(post)}>Delete Post</DeleteButton>

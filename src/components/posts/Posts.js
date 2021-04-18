@@ -20,7 +20,10 @@ export const PostsList = styled.ul`
 export const Header = styled.h3`
     text-align: center;
 `
-
+export const PostsSearch = styled.form`
+    margin: 30px auto 30px auto;
+    text-align: center;
+`
 
 
 
@@ -72,12 +75,15 @@ class Posts extends Component {
             return(
                 <AllPostsContainer>
                     <PostsList> 
-                        <form>
-                            <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
+                        <PostsSearch>
+                            Search Posts
                             <input type="text" onChange={event => this.handleChange(event)} name="text" value={this.state.searchTerm}/>
-                        </form>
+                            <br></br>
+                            Pinned Posts
+                            <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
+                        </PostsSearch>
                         {pinnedPosts.map(post => 
-                        <Post key={post.id} user={this.props.user} 
+                        <Post width={30} key={post.id} user={this.props.user} 
                         post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                     </PostsList> 
                 </AllPostsContainer>
@@ -88,12 +94,15 @@ class Posts extends Component {
                     <AllPostsContainer>
                         {console.log(filteredPosts)}
                         <PostsList>
-                            <form>
-                                <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
+                            <PostsSearch>
+                                Search Posts
                                 <input type="text" onChange={event => this.handleChange(event)} name="text" value={this.state.searchTerm}/>
-                            </form>
+                                <br></br>
+                                Pinned Posts
+                                <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
+                            </PostsSearch>
                             {filteredPosts && filteredPosts.map(post => 
-                            <Post key={post.id} user={this.props.user} 
+                            <Post width={60 } key={post.id} user={this.props.user} 
                             post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                         </PostsList>
                     </AllPostsContainer>
@@ -107,7 +116,7 @@ class Posts extends Component {
                     <Header>Recent Posts</Header>
                     <PostsList>
                         {filteredPosts && filteredPosts.slice(0,4).map(post => 
-                        <Post key={post.id} user={this.props.user} 
+                        <Post width={100}key={post.id} user={this.props.user} 
                         post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                     </PostsList>
                 </RecentPostsContainer>
