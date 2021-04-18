@@ -74,6 +74,8 @@ class Posts extends Component {
             let pinnedPosts = this.state.pinnedPosts.filter(post => post.content.toLowerCase().includes(this.state.searchTerm.toLowerCase()) || post.content.toLowerCase().startsWith(this.state.searchTerm.toLowerCase()))
             return(
                 <AllPostsContainer>
+                    <h4>All Posts</h4>
+                    <hr></hr>
                     <PostsList> 
                         <PostsSearch>
                             Search Posts
@@ -92,6 +94,8 @@ class Posts extends Component {
             else {
                 return(
                     <AllPostsContainer>
+                        <h4>All Posts</h4>
+                        <hr></hr>
                         {console.log(filteredPosts)}
                         <PostsList>
                             <PostsSearch>
@@ -102,7 +106,7 @@ class Posts extends Component {
                                 <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                             </PostsSearch>
                             {filteredPosts && filteredPosts.map(post => 
-                            <Post width={60 } key={post.id} user={this.props.user} 
+                            <Post width={60} key={post.id} user={this.props.user} 
                             post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                         </PostsList>
                     </AllPostsContainer>

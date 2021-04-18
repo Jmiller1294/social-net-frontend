@@ -8,7 +8,7 @@ export const AboutMeContainer = styled.div`
 const AboutMe = (props) => {
   return (
     <AboutMeContainer>
-      <h2>About Me</h2>
+      <h4>About Me</h4>
       <hr></hr>
       <p>Age: {props.user.age}</p>
       <p>Hobbies: {props.user.hobbies}</p>

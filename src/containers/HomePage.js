@@ -41,8 +41,17 @@ class Homepage extends Component {
             articles: data.articles
         }))
     }
+    
+    getWeather() {
+        console.log("weather")
+        const url = 'https://api.weatherbit.io/v2.0/current?lat=35.7796&lon=-78.6382&key=472950a8415340068ed5bcb4707354db'
+        fetch(url)
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+    }
 
     componentDidMount() {
+        this.getWeather()
         this.getNews()
     }
     

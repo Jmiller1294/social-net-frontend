@@ -29,6 +29,8 @@ const Pictures = (props) => {
   
   return (
     <PicturesContainer>
+      <h4>Pictures</h4>
+      <hr></hr>
       <PicturesList>
         <Picture><Image src={img1} alt=""/></Picture>
         <Picture><Image src={img1} alt=""/></Picture>

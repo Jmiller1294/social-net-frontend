@@ -56,15 +56,11 @@ class ProfilePage extends Component {
                 </Row>
                 <Row>
                     <Col size={1}>
-                        <h2>Pictures</h2>
-                        <hr></hr>
                         <Pictures />
                     </Col>
                 </Row>
                 <Row>
                     <Col size={1}>
-                        <h2>All Posts</h2>
-                        <hr></hr>
                         <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost} allPosts={this.state.allPosts}/>
                     </Col>
                 </Row>
