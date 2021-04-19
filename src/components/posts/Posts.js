@@ -85,7 +85,7 @@ class Posts extends Component {
                             <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                         </PostsSearch>
                         {pinnedPosts.map(post => 
-                        <Post width={30} key={post.id} user={this.props.user} 
+                        <Post allPosts={this.props.allPosts} width={30} key={post.id} user={this.props.user} 
                         post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                     </PostsList> 
                 </AllPostsContainer>
@@ -106,7 +106,7 @@ class Posts extends Component {
                                 <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                             </PostsSearch>
                             {filteredPosts && filteredPosts.map(post => 
-                            <Post width={60} key={post.id} user={this.props.user} 
+                            <Post allPosts={this.props.allPosts} width={60} key={post.id} user={this.props.user} 
                             post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                         </PostsList>
                     </AllPostsContainer>
@@ -120,7 +120,7 @@ class Posts extends Component {
                     <Header>Recent Posts</Header>
                     <PostsList>
                         {filteredPosts && filteredPosts.slice(0,4).map(post => 
-                        <Post width={100}key={post.id} user={this.props.user} 
+                        <Post allPosts={this.props.allPosts} width={100}key={post.id} user={this.props.user} 
                         post={post} delete={this.props.delete} pinned={post => this.handlePin(post)}/>)}
                     </PostsList>
                 </RecentPostsContainer>

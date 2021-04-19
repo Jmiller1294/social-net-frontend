@@ -44,14 +44,26 @@ const Post = (props) => {
         props.delete(post.id)
     }
 
-    return (
-        <PostCard width={props.width}>
-            <b>Posted by:</b> {user.name}
-            <PostContent>{post.content}</PostContent>
-            <DeleteButton onClick={() => handleClick(post)}>Delete Post</DeleteButton>
-            <PinButton onClick={() => props.pinned(post)}>Pin</PinButton>
-        </PostCard>
-    )
+    console.log(props)
+
+    if(props.allPosts === false) {
+        return (
+            <PostCard width={props.width}>
+                <b>Posted by:</b> {user.name}
+                <PostContent>{post.content}</PostContent>
+            </PostCard>
+        )
+    }
+    else {
+        return (
+            <PostCard width={props.width}>
+                <b>Posted by:</b> {user.name}
+                <PostContent>{post.content}</PostContent>
+                <DeleteButton onClick={() => handleClick(post)}>Delete Post</DeleteButton>
+                <PinButton onClick={() => props.pinned(post)}>Pin</PinButton>
+            </PostCard>
+        )
+    }
 }
 export default Post;
 

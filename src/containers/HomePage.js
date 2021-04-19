@@ -45,7 +45,7 @@ class Homepage extends Component {
     
     getWeather() {
         console.log("weather")
-        const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=40.7128&lon=-74.0060&units=imperial&exclude=minutely,hourly,alerts&appid=68f1cbfbc7237dc91303b0adf1ab5490'
+        const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=40.7128&lon=-74.0060&units=imperial&exclude=minutely,hourly,daily,alerts&appid=68f1cbfbc7237dc91303b0adf1ab5490'
         fetch(url)
         .then(resp => resp.json())
         .then(data => this.setState({
