@@ -30,6 +30,7 @@ export const Header = styled.h2`
 class Homepage extends Component {
     state = {
         articles: [],
+        weather: '',
         allPosts: false
     }
 
@@ -44,10 +45,12 @@ class Homepage extends Component {
     
     getWeather() {
         console.log("weather")
-        const url = 'https://api.weatherbit.io/v2.0/current?lat=35.7796&lon=-78.6382&key=472950a8415340068ed5bcb4707354db'
+        const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=40.7128&lon=-74.0060&units=imperial&exclude=minutely,hourly,alerts&appid=68f1cbfbc7237dc91303b0adf1ab5490'
         fetch(url)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => this.setState({
+            weather: data.current
+        }))
     }
 
     componentDidMount() {
@@ -66,7 +69,7 @@ class Homepage extends Component {
                         </Col>
                         <Col size={2}>
                             <Header>Hello, {this.props.user.name}</Header>
-                            <Weather/>
+                            <Weather weather={this.state.weather}/>
                             <PostInput user={this.props.user} posts={this.props.posts}/>
                             <Articles articles={this.state.articles}/>
                         </Col>
