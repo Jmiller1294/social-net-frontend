@@ -3,6 +3,7 @@ import Post from './Post';
 import styled from 'styled-components';
 
 export const RecentPostsContainer = styled.div`
+    margin-top: 40px;
     padding: 0;
     position: fixed;
     width: 23%;
