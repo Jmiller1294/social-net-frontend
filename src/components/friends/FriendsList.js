@@ -13,7 +13,7 @@ export const FriendsListContainer = styled.div`
 `
 export const List = styled.ul`
   list-style: none;
-  padding: 0;
+  padding-left: 15px;
 `
 export const ListItem = styled.li`
   border: 1px solid black;
@@ -21,6 +21,10 @@ export const ListItem = styled.li`
   margin-top: 10px;
   margin-right: 5px;
   margin-left: 5px;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 0 0 10px #777777;
+  }
 `
 export const Offline = styled.span`
   color: red;
@@ -29,7 +33,8 @@ export const Online = styled.span`
   color: green;
 `
 export const Header = styled.h3`
-    text-align: center;
+  margin-top: 5px;
+  text-align: center;
 `
 
 const FriendsList = (props) => {

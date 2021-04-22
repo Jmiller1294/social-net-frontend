@@ -1,15 +1,26 @@
 import React from 'react';
-import Article from './Article'
+import styled from 'styled-components';
+import Article from './Article';
+
+export const ArticlesContainer = styled.div`
+`
+export const ArticlesTitle = styled.h1`
+  text-align: center;
+`
+export const ArticlesList = styled.div`
+  list-style-type: none;
+  width: 100%;
+  padding: 0; 
+`
 
 const Articles = (props) => {
     return(
-      <div className="news-container">
-        <h1 className="articles-title">News Feed</h1>
-        <ul className="articles-list">
-          {console.log(props)}
+      <ArticlesContainer>
+        <ArticlesTitle>News Feed</ArticlesTitle>
+        <ArticlesList>
           {props.articles.map((article, index) => <li key={article.title}><Article article={article} /></li>)}
-        </ul>
-      </div>
+        </ArticlesList>
+      </ArticlesContainer>
     )
 }
 export default Articles;

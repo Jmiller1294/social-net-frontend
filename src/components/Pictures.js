@@ -27,6 +27,9 @@ export const Picture = styled.li`
   height: 200px;
   margin-top: 20px;
   margin-right: 5px;
+  &:hover {
+    box-shadow: 0 0 10px #777777;
+  }
 `
 
 export const Image = styled.img`
