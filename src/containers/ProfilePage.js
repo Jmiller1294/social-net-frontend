@@ -24,6 +24,8 @@ export const Col = styled.div`
 export const ProfilePic = styled.img`
     height: 240px;
     width: 200px;
+    border: 1px solid white;
+    border-radius: 5px;
 `;
 
 export const UserName = styled.h2`

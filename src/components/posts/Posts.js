@@ -26,6 +26,10 @@ export const PostsSearch = styled.form`
     text-align: center;
 `
 
+export const SearchBox = styled.input`
+    border-radius: 5px;
+`
+
 
 
 
@@ -79,10 +83,10 @@ class Posts extends Component {
                     <hr></hr>
                     <PostsList> 
                         <PostsSearch>
-                            Search Posts
-                            <input type="text" onChange={event => this.handleChange(event)} name="text" value={this.state.searchTerm}/>
+                            <SearchBox type="text" onChange={event => this.handleChange(event)} placeholder="Search Posts" name="text" value={this.state.searchTerm}/>
                             <br></br>
                             Pinned Posts
+                            &nbsp;
                             <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                         </PostsSearch>
                         {pinnedPosts.map(post => 
@@ -100,10 +104,10 @@ class Posts extends Component {
                         {console.log(filteredPosts)}
                         <PostsList>
                             <PostsSearch>
-                                Search Posts
-                                <input type="text" onChange={event => this.handleChange(event)} name="text" value={this.state.searchTerm}/>
+                                <SearchBox type="text" onChange={event => this.handleChange(event)} name="text" placeholder="Search Posts" value={this.state.searchTerm}/>
                                 <br></br>
                                 Pinned Posts
+                                &nbsp;
                                 <input type="checkbox" id="myCheck" onChange={() => this.handlePinChange()} ></input>
                             </PostsSearch>
                             {filteredPosts && filteredPosts.map(post => 
