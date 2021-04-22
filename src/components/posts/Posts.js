@@ -3,6 +3,7 @@ import Post from './Post';
 import styled from 'styled-components';
 
 export const RecentPostsContainer = styled.div`
+    margin-left: 5px;
     margin-top: 40px;
     padding: 0;
     position: fixed;
@@ -29,9 +30,6 @@ export const PostsSearch = styled.form`
 export const SearchBox = styled.input`
     border-radius: 5px;
 `
-
-
-
 
 class Posts extends Component {
     
@@ -66,9 +64,6 @@ class Posts extends Component {
         }
     }
 
-    componentDidMount() {
-        console.log("mounted")
-    }
 
     render() { 
         let filteredPosts = this.props.posts.filter(post => post.content.toLowerCase().includes(this.state.searchTerm.toLowerCase()) || post.content.toLowerCase().startsWith(this.state.searchTerm.toLowerCase()))

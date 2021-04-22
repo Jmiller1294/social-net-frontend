@@ -1,4 +1,3 @@
-import './App.css';
 import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
 import AboutPage from './components/AboutPage';
@@ -14,8 +13,7 @@ import { connect } from 'react-redux';
 
 export const Container = styled.div`
   font-family: 'Lato', sans-serif;
-  margin-left: 5px;
-  margin-right: 2px;
+  width: 100%
 `
 
 class App extends Component {

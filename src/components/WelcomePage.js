@@ -20,7 +20,7 @@ export const WelcomePageContainer = styled.div`
 export const Header = styled.h1`
   font-size: 70px;
   position: absolute;
-  top: 15%;
+  top: 50%;
   left: 25%;
   color: black;
   text-align: center;
@@ -31,7 +31,6 @@ export const BackgroundImage = styled.img`
   flex: 1;
   height: 100vh;
   min-height : 100vh;
-  opacity: .5;
   overflow-x: hidden;
 `
 
@@ -44,7 +43,6 @@ const Welcome = () => {
         <Row>
             <WelcomePageContainer>
               <BackgroundImage alt="background" src={background}/>
-              <Header>Welcome to Social Net</Header>
             </WelcomePageContainer>
         </Row>
       </Grid>

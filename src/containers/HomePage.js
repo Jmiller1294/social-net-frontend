@@ -9,23 +9,22 @@ import styled from 'styled-components';
 import Weather from '../components/Weather';
 
 export const Grid = styled.div`
- 
-`;
+`
 
 export const Row = styled.div`
   display: flex;
-`;
+`
 
 export const Col = styled.div`
   flex: ${ (props) => props.size};
   height 100%;
   padding: 10px;
-`;
+`
 
 export const Header = styled.h2`
   padding-top: 0;
   text-align: center;
-`;
+`
 
 class Homepage extends Component {
     state = {
@@ -61,24 +60,22 @@ class Homepage extends Component {
     render() {
         //const user = this.props.users[this.props.match.params.id - 1]
         return (
-            <div>
-                <Grid>
-                    <Row>
-                        <Col size={1}>
-                            <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost} allPosts={this.state.allPosts}/>
-                        </Col>
-                        <Col size={2}>
-                            <Header>Hello, {this.props.user.name}</Header>
-                            <Weather weather={this.state.weather}/>
-                            <PostInput user={this.props.user} posts={this.props.posts}/>
-                            <Articles articles={this.state.articles}/>
-                        </Col>
-                        <Col size={1}>
-                            <FriendsList friends={this.props.friends}/>
-                        </Col>
-                    </Row>
-                </Grid>
-            </div>
+            <Grid>
+                <Row>
+                    <Col size={1}>
+                        <Posts user={this.props.user} posts={this.props.posts} delete={this.props.deletePost} allPosts={this.state.allPosts}/>
+                    </Col>
+                    <Col size={2}>
+                        <Header>Hello, {this.props.user.name}</Header>
+                        <Weather weather={this.state.weather}/>
+                        <PostInput user={this.props.user} posts={this.props.posts}/>
+                        <Articles articles={this.state.articles}/>
+                    </Col>
+                    <Col size={1}>
+                        <FriendsList friends={this.props.friends}/>
+                    </Col>
+                </Row>
+            </Grid>
         )
     }
 }
