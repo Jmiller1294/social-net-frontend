@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import postPicture from '../../assets/profile.jpg';
 
 export const PostCard = styled.li`
     position: relative; 
@@ -39,6 +40,12 @@ export const PinButton = styled.button`
     color: #fff;
     background-color:#007bff;
 ` 
+export const PostPicture = styled.img`
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    margin-right: 5px;
+`
 
 
 
@@ -54,17 +61,18 @@ const Post = (props) => {
         return date;
     }
 
-    const getTime = (created) => {
-        let time = created.slice(12, 19)
-        return time;
-    }
+    // const getTime = (created) => {
+    //     let time = created.slice(12, 16)
+    //     return time;
+    // }
 
     if(props.allPosts === false) {
         return (
             <PostCard width={props.width}>
-                <b>Posted by:</b> {user.name}
+                <PostPicture src={postPicture}/>
+                <b>{user.name}</b>
                 <PostContent>{post.content}</PostContent>
-                Posted on {getDate(post.created_at)} at {getTime(post.created_at)}   
+                Posted on <b>{getDate(post.created_at)}</b>   
             </PostCard>
         )
     }

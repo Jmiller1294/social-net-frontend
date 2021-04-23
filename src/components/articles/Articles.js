@@ -11,6 +11,7 @@ export const ArticlesList = styled.div`
   list-style-type: none;
   width: 100%;
   padding: 0; 
+  padding-bottom: 40px;
 `
 
 const Articles = (props) => {
