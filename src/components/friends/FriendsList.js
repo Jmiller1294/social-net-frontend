@@ -17,6 +17,7 @@ export const List = styled.ul`
 `
 export const ListItem = styled.li`
   border: 1px solid black;
+  padding: 5px;
   width: 90%;
   margin-top: 10px;
   margin-right: 5px;

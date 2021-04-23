@@ -10,10 +10,16 @@ import styled from 'styled-components';
 import { fetchUser } from './actions/fetchUser';
 import { Route , Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createGlobalStyle } from 'styled-components';
 
-export const Container = styled.div`
-  font-family: 'Lato', sans-serif;
-  width: 100%
+export const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+  } 
 `
 
 class App extends Component {
@@ -27,7 +33,6 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar/>
-        <Container>
           <Switch>
             <Route exact path="/" component={WelcomePage} />
             <Route exact path="/user" render={(props) => <HomePage {...props} user={this.props.user} posts={this.props.posts} friends={this.props.friends} />}/>
@@ -36,7 +41,7 @@ class App extends Component {
             <Route exact path="/about" component={AboutPage}/>
             <Route component={NoMatch} />
           </Switch>
-        </Container>
+          <GlobalStyle />
       </React.Fragment>
     );
   }

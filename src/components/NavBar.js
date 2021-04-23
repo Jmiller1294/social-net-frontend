@@ -5,7 +5,7 @@ import profile from "../assets/logo.png"
 export const Row = styled.div`
    display: flex;
    background-color: #051525;
-   height: 40px;
+   height: 42px;
 `;
 
 export const Nav = styled.ul`
@@ -13,6 +13,8 @@ export const Nav = styled.ul`
     list-style: none;
     float: right;
     padding: 5px;
+    padding-top: 7px;
+    margin-bottom: 0;
 `;
 
 export const Logo = styled.img`
