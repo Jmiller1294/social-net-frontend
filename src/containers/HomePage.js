@@ -59,6 +59,7 @@ class Homepage extends Component {
     
     render() {
         //const user = this.props.users[this.props.match.params.id - 1]
+        console.log(this.props)
         return (
             <Grid>
                 <Row>

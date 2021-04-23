@@ -40,6 +40,8 @@ export const PinButton = styled.button`
     background-color:#007bff;
 ` 
 
+
+
 const Post = (props) => {
     const { post, user } = props;
 
@@ -47,13 +49,22 @@ const Post = (props) => {
         props.delete(post.id)
     }
 
-    console.log(props)
+    const getDate = (created) => {
+        let date = created.slice(0, 10);
+        return date;
+    }
+
+    const getTime = (created) => {
+        let time = created.slice(12, 19)
+        return time;
+    }
 
     if(props.allPosts === false) {
         return (
             <PostCard width={props.width}>
                 <b>Posted by:</b> {user.name}
                 <PostContent>{post.content}</PostContent>
+                Posted on {getDate(post.created_at)} at {getTime(post.created_at)}   
             </PostCard>
         )
     }

@@ -8,7 +8,7 @@ import Pictures from '../components/Pictures';
 import Posts from '../components/posts/Posts';
 
 export const Grid = styled.div`
-    
+    padding: 20px;
 `;
 
 export const Row = styled.div`
@@ -22,8 +22,8 @@ export const Col = styled.div`
 `;
 
 export const ProfilePic = styled.img`
-    height: 240px;
-    width: 200px;
+    height: 200px;
+    width: 170px;
     border: 1px solid white;
     border-radius: 5px;
 `;

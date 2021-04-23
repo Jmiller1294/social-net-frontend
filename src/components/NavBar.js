@@ -42,8 +42,6 @@ const NavBar = () => {
                <ListItem><a href="/about">About</a></ListItem>
             </Nav>
         </Row>
-           
-        
     )
 }
 export default NavBar;
