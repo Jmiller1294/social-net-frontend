@@ -8,18 +8,20 @@ export const ArticleCard = styled.div`
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+  height: 400px;
 `
 
 export const ArticleTitle = styled.p`
   margin: 10px 10px 0px 10px;
   padding: 5px;
+  height: 15%;
 `
 export const ArticleLink = styled.a`
   
 `
 export const ArticleImage = styled.img`
 width: 100%;
-height: 250px;
+height: 85%;
 border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px;
 `

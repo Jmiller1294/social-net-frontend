@@ -8,7 +8,7 @@ import Pictures from '../components/Pictures';
 import Posts from '../components/posts/Posts';
 
 export const Grid = styled.div`
-    padding: 20px;
+    padding: 25px;
 `;
 
 export const Row = styled.div`
@@ -17,7 +17,7 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   flex: ${ (props) => props.size};
-  height 100%;
+  height: 100%;
   padding: 10px;
 `;
 

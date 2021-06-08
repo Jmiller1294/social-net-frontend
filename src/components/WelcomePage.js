@@ -14,7 +14,7 @@ export const Row = styled.div`
 export const WelcomePageContainer = styled.div`
   width: 100%; 
   height: 100%;
-  position relative;
+  position: relative;
 `
 
 export const Header = styled.h1`
@@ -37,7 +37,6 @@ export const BackgroundImage = styled.img`
 
 
 const Welcome = () => {
-
     return ( 
       <Grid>
         <Row>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 export const FriendsListContainer = styled.div`
   position: fixed;
@@ -27,16 +28,21 @@ export const ListItem = styled.li`
     box-shadow: 0 0 10px #777777;
   }
 `
-export const Offline = styled.span`
-  color: red;
-`
-export const Online = styled.span`
-  color: green;
+export const Status = styled.span`
+  color: ${props => props.theme.color};
 `
 export const Header = styled.h3`
   margin-top: 5px;
   text-align: center;
 `
+
+const themeOnline = {
+  color: "green"
+}
+
+const themeOffline = {
+  color: "red"
+}
 
 const FriendsList = (props) => {
   return (
@@ -44,12 +50,12 @@ const FriendsList = (props) => {
       <Header>Friends List</Header>
       <List>
         {props.friends.map(friend => {
-          if(friend.status === "online") {
-            return <ListItem key={friend.id}>{friend.name}: <Online>{friend.status}</Online></ListItem>
-          }
-          else {
-            return <ListItem key={friend.id}>{friend.name}: <Offline>{friend.status}</Offline></ListItem>
-          }
+          return <ListItem key={friend.id}>{friend.name}: 
+            <ThemeProvider theme={friend.status === 'online' ? themeOnline 
+            : themeOffline}>
+              <Status>{friend.status}</Status>
+            </ThemeProvider>
+          </ListItem>
         })
         }
       </List>

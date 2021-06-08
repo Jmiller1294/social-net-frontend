@@ -6,6 +6,7 @@ export const PostCard = styled.li`
     position: relative; 
     width: ${ (props) => props.width + "%"};
     min-height: 175px;
+    max-width: 450px;
     background-color: rgb(245, 245, 245);
     margin: 10px auto 10px auto;
     border-radius: 5px;

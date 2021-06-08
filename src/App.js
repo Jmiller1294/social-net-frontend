@@ -6,7 +6,6 @@ import FriendsPage from './containers/FriendsPage';
 import ProfilePage from './containers/ProfilePage';
 import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
-import styled from 'styled-components';
 import { fetchUser } from './actions/fetchUser';
 import { Route , Switch} from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -23,7 +22,6 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 class App extends Component {
-
 
   componentDidMount() {
     this.props.fetchUser()
